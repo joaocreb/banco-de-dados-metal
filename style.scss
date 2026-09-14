@@ -1,0 +1,139 @@
+      body {
+                margin: 0;
+                background-color: #0a0a0a;
+                font-family: system-ui, sans-serif;
+            }
+            .top-bar {
+                background: radial-gradient(
+                    circle at 50% -20%, 
+                    rgba(255, 107, 0, 0.45) 0%, 
+                    rgba(22, 24, 27, 0.98) 70%, 
+                    #16181b 100%
+                );
+                width: 100%;
+                height: 60px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 15px 30px;
+                box-sizing: border-box;
+                border-bottom: 1px solid rgba(255, 107, 0, 0.25);
+            }
+            .top-bar .logo {
+                color: #ffffff;
+                font-weight: bold;
+            }
+            
+            .top-bar .logo span {
+                color: #ff6b00;
+            }
+            .top-bar .menu ul {
+                display: flex;
+                list-style: none;
+                gap: 20px;
+                margin: 0;
+                padding: 0;
+            }
+            .top-bar .menu a {
+                color: #c5c6c7;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            .top-bar .menu a:hover {
+                color: #ff6b00;
+            }
+
+            .manchete img {
+            width:500px;
+            height:340px;
+            margin-top:170px;
+            opacity:43%;
+            border-radius:20px;
+            box-shadow: 0 0 8px rgba(255, 107, 0, 0.3);;
+            border-color: #ff6b00;
+            display: block;
+            }
+
+            form[action="/buscar"] {
+            position: relative;
+            margin-top: -180px; 
+            margin-left: 260px; 
+            width: fit-content;
+            z-index: 10;
+            background: rgba(212, 113, 32, 0.95); 
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(243, 133, 43, 0.3);
+                                    }
+
+            form button {
+            background-color: #16181b;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            }
+
+            form button:hover {
+            background-color: #668a3e;
+            }
+                                            //nem sei se vai kakakaka
+            @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&display=swap');
+
+            .card-sucesso h3{
+                color: #fff;
+                font-size: 24px;
+                margin-bottom: 10px;
+                position: relative;
+                margin-left:40%;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+            }
+
+            .card-sucesso{
+                border-radius: 5px;
+                width: 640px;
+                height: 100%;
+                background: radial-gradient(circle at 20% 20%, rgba(226, 92, 3, 0.12) 0%, transparent 50%),#0f1113;
+                display:relative;
+                margin-left: 680px;
+                margin-top: -320px;
+            }
+
+            .card-sucesso p strong{
+                color: #f4f8ff;
+                font-size: 16px;
+                margin-bottom: 10px; 
+            }
+            
+            .card-sucesso p{
+                color: #e25c03;
+                font-size: 16px;
+                margin-bottom: 10px; 
+            }
+
+            .card-warn{
+                color:red;
+                position:relative;
+                display:block;
+                margin-right: 650px;
+                margin-top: -240px;
+                box-sizing:30px;
+            }
+
+            res p{
+                color: #e25c03;
+                font-size: 16px;
+                margin-bottom: 10px; 
+            }
+
+            .card-sucesso button{
+                background-color: #e25c03;
+                position:relative;
+                margin-right:40px;
+                display:flex;
+                box-sizing:100%;
+            }
+
+            #calc-box{
+                background:repeating-linear-gradient(white,black);
+            }
+

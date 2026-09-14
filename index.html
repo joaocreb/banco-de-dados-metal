@@ -1,0 +1,18 @@
+<!DOCTYPE html><html lang="pt-br"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Metalúrgica Minimalista</title><link rel="stylesheet" href="style.css"><style>.caixa-calculos {
+    display: none;
+    margin-top: 15px;
+    padding: 15px;
+    background: #f4f4f4;
+    border-left: 4px solid #333;
+}
+.caixa-calculos.ativo {
+    display: block;
+}</style></head><body> <div class="top-bar"><div class="logo">METALÚRGICA <span>STEEL</span></div><div class="menu"><ul><li><a href="?pagina=home">Home</a></li><li><a href="https://github.com/joaocreb?tab=repositories" target="_blank">Services</a></li><li><a href="https://github.com/joaocreb" target="_blank">Contact</a></li></ul></div></div><div class="manchete"><img src="ore.jpeg"></div><div class="form barra"><form method="GET" action="/buscar"><label for="mineral_nome"> </label><input type="text" placeholder="Digite o minério..." id="search-input" name="termo" value=""><button type="submit">Buscar</button></form></div><div class="resultado-container"></div></body><script>const btn = document.getElementById('btn-info');
+const box = document.getElementById('calc-box');
+
+if (btn && box) {
+    btn.addEventListener('click', () => {
+        box.classList.toggle('ativo');
+        btn.textContent = box.classList.contains('ativo') ? 'ocultar informações' : 'outras informações';
+    });
+}</script></html>

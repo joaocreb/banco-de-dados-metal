@@ -1,0 +1,79 @@
+doctype html
+html(lang="pt-br")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Metalúrgica Minimalista
+        link(rel="stylesheet", href="style.css")
+        style.
+            .caixa-calculos {
+                display: none;
+                margin-top: 15px;
+                padding: 15px;
+                background: #f4f4f4;
+                border-left: 4px solid #333;
+            }
+            .caixa-calculos.ativo {
+                display: block;
+            }
+    body 
+        - const paginaAtiva = 'home'
+
+        .top-bar
+            .logo METALÚRGICA 
+                span STEEL
+            .menu
+                ul
+                    li: a(href="?pagina=home") Home
+                    li: a(href="https://github.com/joaocreb?tab=repositories", target="_blank") Services
+                    li: a(href="https://github.com/joaocreb", target="_blank") Contact
+
+        case paginaAtiva
+            when 'home'
+                .manchete
+                    img(src="ore.jpeg")
+
+        //- Barra de pesquisa 
+        .form.barra
+            form(method="GET" action="/buscar")
+                label(for="mineral_nome") 
+                input(type="text", placeholder="Digite o minério...", id="search-input", name="termo", value=termoDigitado || "")
+                button(type="submit") Buscar
+
+        - const minerioEncontrado = minerais.find(m => m.nome.toLowerCase() === (termoDigitado || "").toLowerCase().trim());
+
+        .resultado-container
+            if minerioEncontrado
+                .card-sucesso
+                    h3 #{minerioEncontrado.nome}
+                    p <strong>Dureza (Mohs):</strong> #{minerioEncontrado.dureza_mohs}
+                    p <strong>Densidade:</strong> #{minerioEncontrado.densidade}
+                    p <strong>Volume:</strong> #{minerioEncontrado.volume}
+                    p <strong>Qtd Átomos:</strong> #{minerioEncontrado.quantidade_atomos}
+                    p <strong>Massa Atômica:</strong> #{minerioEncontrado.massa_atomica}
+
+                    button(type="button" id="btn-info") outras informações
+
+                    .caixa-calculos#calc-box
+                        h4 Cálculos Estequiométricos (Julia)
+                        p <strong>Massa (m):</strong> #{m}
+                        p <strong>Massa Molar (M):</strong> #{mm}
+                        p <strong>Quantidade de Matéria:</strong> #{qm} mol
+                        p <strong>Número de Partículas:</strong> #{np}
+                        p <strong>Teor do Elemento:</strong> #{te}%
+                        
+            else
+                if termoDigitado
+                    .card-warn
+                        | ⚠️ Aviso: Minério "#{termoDigitado}" não encontrado na base de dados!
+
+    script.
+            const btn = document.getElementById('btn-info');
+            const box = document.getElementById('calc-box');
+            
+            if (btn && box) {
+                btn.addEventListener('click', () => {
+                    box.classList.toggle('ativo');
+                    btn.textContent = box.classList.contains('ativo') ? 'ocultar informações' : 'outras informações';
+                });
+            }
